@@ -45,9 +45,9 @@ extends CanvasLayer
 @onready var d39 = "Thanks so much for your help! Take a look at my final beautiful code!"
 
 @onready var c0 = "def func HowManyAtendees? \n    0x7ffe5367e044 = FetchAtendeeData()\n     __________ = 0x7ffe5367e044.GetAtendees() \n    return(_______)"
-@onready var c1 = ""
-@onready var c2 = ""
-@onready var c3 = ""
+@onready var c1 = "placeholder"
+@onready var c2 = "placeholder"
+@onready var c3 = "placeholder"
 @onready var c4 = "def class ConventionVenue: \n     NtTlCCPt = 200 \n     nrMS = 10\n     aDaC = True \n     l = (44.2231,99.1111)"
 @onready var c5 = "def class ConventionVenue: \n     nTtlCpt = 200 \n     nRms = 10\n     adaC = True \n     l = (44.2231,99.1111)"
 @onready var c6 = "def class ConventionVenue: \n     Nttlcpt = 200 \n     nrMS = 10\n     Adac = True \n     l = (44.2231,99.1111)"

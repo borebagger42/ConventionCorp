@@ -1,8 +1,13 @@
 # ConventionCorp
 
-ConventionCorp is a gamified educational tool for teaching good coding practices, specifically naming conventions. It is meant to be used as supplemental instruction to increase engagement and understanding of the topic. You play as a manager at the titular company, ConventionCorp, and you are tasked with onboarding Jeb. Jeb comes from a planet where they only use memory addresses instead of variable names so he has never heard or even seen code using naming conventions. Your job is to give him feedback on his code, but be careful! As he will follow your advice to the extreme. 
+ConventionCorp is a gamified educational tool for teaching good coding practices, specifically naming conventions. It is meant to be used as supplemental instruction to increase engagement and understanding of the topic. You play as a manager at the titular company, ConventionCorp, and you are tasked with onboarding Jeb. Jeb comes from a planet where they only use memory addresses instead of variable names, so he has never heard or even seen code using naming conventions. Your job is to give him feedback on his code, but be careful! As he will follow your advice to the extreme. 
+
+### Usage Instructions
+To play the demo, simply download either of the executables in the demos folder, then follow the instructions found in the module. 
+To make changes to the code, fork the project and export it to your local machine through whatever means you like. Then open Godot and import the Code folder as the project folder. 
 
 ### Implementation Overview
+This project was implemented in Godot using GDScript.
 There are two trees, one representing the dialogue in the dialogue box and the other for the diegetic computer. There is a universal controller that dictates which part of these array-based trees will be output to their respective areas. 
 There is additional implementation for dialogue subtrees that do not affect the universal controller, and thus, the game loop remains unaffected. There is also an implementation to read from a variable and determine if that variable is snake case, camel case, or neither. Lastly, there is an implementation for a pause screen with options to resume, restart, or change the pace at which text appears. 
 

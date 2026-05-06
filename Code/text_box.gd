@@ -1,8 +1,18 @@
+"""
+Author: JoJo Kaler
+Credits: This was developed as a capstone project under the supervision of Dr. Christian Newman at the Rochester Institute of Technology. Generative AI was not used in the writing of this code, however it was used to generate some of the visuals. 
+
+"""
+
 extends CanvasLayer
 
+#Initilization of variables representing on screen elements
 @onready var textBoxLabel = $Correctsizedoffice/TextBoxContainor/MarginContainer/HBoxContainer/Label
 @onready var codeBoxLabel = $JustScreen/HBoxContainer/Label
 
+
+#Initializing variables that go into the dialogue tree. d0 represents the root node, d1,d2,d3 are it's children, etc.
+##d0 is an example of how to create a subtree that doesn't affect the game loop. The subtree must be it's own array and each element of the subtree must be it's own array. Two items in the same node of the subtree represent multiple dialogue screens.
 @onready var d0 = [["Hello! My name is Jeb and I am your new hire from planet Asblamflabacor! How are you today? \n4. I'm doing great! How are you? \n5. I'm doing terribly, How are you?"] ,["Awesome! I am not having such a good day because I was told you guys use something called variable names here rather than memorizing every storage address like we do on Asblamflabacor? And apparently there's rules around what I am supposed to name these variables??? I sent the code I'm working on to your computer, could you give me an example of a variable name?"],["I too am having a bad day I was told you guys use something called variable names here rather than memorizing every storage address like we do on Asblamflabacor? And apparently there's rules around what I am supposed to name these variables??? I sent the code I'm working on to your computer, could you give me an example of a variable name?"]]
 @onready var d1 = "Thanks! I see that you have capitalized some letters. How often should I be capitalizing these letters?\n1. Anytime you want to emphasize a particular letter \n2. When you start a new word or abbreviation after the first \n3. Only when you want to emphasize a particular word in a variable name"
 @onready var d2 = "Thanks! I see that you are using underscores. How often should I put underscores in my variable name?\n1. Anytime you want to emphasize a particular letter \n2. When you start a new word or abbreviation after the first \n3. Only when you want to emphasize a particular word in a variable name"
@@ -44,6 +54,7 @@ extends CanvasLayer
 @onready var d38 = "Thanks so much for your help! Take a look at my final beautiful code!"
 @onready var d39 = "Thanks so much for your help! Take a look at my final beautiful code!"
 
+#Variables that represent the diagetic code represented on the computer. Subtrees are not compaitble here, each variable must be it's own string. 
 @onready var c0 = "def func HowManyAtendees? \n    0x7ffe5367e044 = FetchAtendeeData()\n     __________ = 0x7ffe5367e044.GetAtendees() \n    return(_______)"
 @onready var c1 = "placeholder"
 @onready var c2 = "placeholder"
@@ -66,31 +77,26 @@ extends CanvasLayer
 @onready var c19 = "def class ConventionVenue: \n     numtotalCapacity = 200 \n     Numrooms = 10\n     adaCompliance = True \n     Location = (44.2231,99.1111)"
 @onready var c20 = "def class ConventionVenue: \n     Nttlcpt = 200 \n     nrMS = 10\n     Adac = True \n     l = (44.2231,99.1111)"
 @onready var c21 = "def class ConventionVenue: \n     ThemaximumnumberofpeoplethevenueCanaccommodateintermsofguestsnotincludingstafforpresenters = 200 \n     ThenumberofroomsthatweCanuseinthevenueforpresentationsnotincludingBathroomsAndbackofhousestuffjustConferenceroomsandballrooms = 10\n     Whetherornotthevenuehasrampselevatorsandotheradacompliantfeatures = True \n     Theexactcoordinatesofthevenue = (44.2231,99.1111)"
-
 @onready var c22 = "def class Convention_Venue: \n     n_u_m_t_o_t_al_c_ap_a_c_i_ty = 200 \n     n_u_m_r_o_o_ms = 10\n     a_d_a_c_o_m_p_l_i_a_n_ce = True \n     l_o_c_a_t_i_o_n = (44.2231,99.1111)"
 @onready var c23 = "def class Convention_Venue: \n     n_t_t_l_c_p_t = 200 \n     nr_ms = 10\n     a_da_c = True \n     l = (44.2231,99.1111)"
 @onready var c24 = "def class Convention_Venue: \n     t_h_e_m_ax_i_m_u_m_n_u_mb_er_o_f_p_e_o_pl_e_t_h_e_v_en_u_e_c_an_ac_c_o_m_mo_d_at_e_in_t_er_ms_o_f_gu_es_ts_n_ot_in_c_lu_d_in_g_st_af_f_or_p_re_s_en_t_er_s = 200 \n     t_he_n_um_b_er_o_f_ro_o_ms_t_ha_t_w_e_c_an_us_e_in_th_e_v_en_ue_f_or_p_re_s_en_t_at_io_ns_n_ot_in_c_lu_di_n_g_ba_th_ro_o_ms_a_nd_b_ac_k_of_h_ou_se_s_tu_ff_j_us_t_co_nf_re_nc_e_r_oo_ms_an_d_b_al_l_r_oo_m_s = 10\n     w_he_th_er_o_r_no_t_t_he_v_en_ue_h_as_r_am_ps_e_le_va_to_rs_a_nd_o_th_e_r_ad_a_c_om_pl_ia_n_t_f_ea_tu_re_s = True \n     t_h_e_ex_ac_t_c_oo_rd_in_at_es_o_f_th_e_v_en_u_e = (44.2231,99.1111)"
-
 @onready var c25 = "def class Convention_Venue: \n     num_total_capacity = 200 \n     num_rooms = 10\n     ada_compliance = True \n     location = (44.2231,99.1111)"
 @onready var c26 = "def class Convention_Venue: \n     n_ttl_cpt = 200 \n     n_rms = 10\n     ada_c = True \n     l = (44.2231,99.1111)"
 @onready var c27 = "def class Convention_Venue: \n     the_maximum_number_of_people_the_venue_can_accommodate_in_terms_of_guests_not_including_staff_or_presenters = 200 \n     the_number_of_rooms_that_we_can_use_in_the_venue_for_presentations_not_including_bathrooms_and_back_of_house_stuff_just_confrence_rooms_and_ball_rooms = 10\n     whether_or_not_the_venue_has_ramps_elevators_and_other_ada_compliant_features = True \n     the_exact_coordinates_of_the_venue = (44.2231,99.1111)"
-
 @onready var c28 = "def class Convention_Venue: \n     numtotal_c_apa_c_ity = 200 \n     numrooms_c_ = 10\n     ada_c_omplian_c_e = True \n     lo_c_ation = (44.2231,99.1111)"
 @onready var c29 = "def class Convention_Venue: \n     nttl_c_pt = 200 \n     nr_ms_c_ = 10\n     ada_c_ = True \n     l = (44.2231,99.1111)"
 @onready var c30 = "def class Convention_Venue: \n     themaximumnumberofpeoplethevenue_c_ana_c__c_ommodateintermsofguestsnotin_c_ludingstafforpresenters = 200 \n     thenumberofroomsthatwe_c_anuseinthevenueforpresentationsnotin_c_ludingbathroomsandba_c_kofhousestuffjust_c_onfren_c_eroomsandballrooms = 10\n     whetherornotthevenuehasrampselevatorsandotherada_c_ompliantfeatures = True \n     theexa_c_t_c_oordinatesofthevenue = (44.2231,99.1111)"
-
 @onready var c31 = "def class ConventionVenue: \n     numtotalcapacity = 200 \n     numrooms = 10\n     adacompliance = True \n     location = (44.2231,99.1111)"
 @onready var c32 = "def class ConventionVenue: \n     nttlcpt = 200 \n     nrms = 10\n     adac = True \n     l = (44.2231,99.1111)"
 @onready var c33 = "def class ConventionVenue: \n     themaximumnumberofpeoplethevenuecanaccommodateintermsofguestsnotincludingstafforpresenters = 200 \n     thenumberofroomsthatwecanuseinthevenueforpresentationsnotincludingbathroomsandbackofhousestuffjustconfrenceroomsandballrooms = 10\n     whetherornotthevenuehasrampselevatorsandotheradacompliantfeatures = True \n     theexactcoordinatesofthevenue = (44.2231,99.1111)"
-
 @onready var c34 = c31
 @onready var c35 = c32
 @onready var c36 = c33
-
 @onready var c37 = c34
 @onready var c38 = c35
 @onready var c39 = c36
 
+#Initialization of the arrays that store the variables for both the dialogue box and computer code that will be iterated over. 
 @onready var dialogueArray = [
 	d0, d1, d2, d3, d4, d5, d6, d7, d8, d9, 
 	d10, d11, d12, d13, d14, d15, d16, d17, d18, d19, 
@@ -105,14 +111,16 @@ extends CanvasLayer
 	c30, c31, c32, c33, c34, c35, c36, c37, c38, c39
 ]
 
-@onready var universalController = 0
-@onready var localController = 0
-@onready var scroller = 0
+#Initialization of variables that control the dialogue box. 
+@onready var universalController = 0 #Controls overall game loop
+@onready var localController = 0 #Controls dialogue subtrees
+@onready var scroller = 0 #Controls multi screen text
 
-@onready var paused = false
+@onready var paused = false #Variable that controls the pause screen
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#Default text displayed on computer and in textbox
 	textBoxLabel.text = "                                                    Controls Menu \n1,2,3,4,5: Dialogue Responses                                                  Esc:pause\nTab: Continue dialogue (only if ... at end)                                     Enter: Submit your written code\nRight Arrow Key: Next dialogue (press now)"
 	codeBoxLabel.text = "Welcome to your official ConventionCorp computer! You will use this to view code written by your staff or sometimes directly give them code in a box like the one below."
 	pass

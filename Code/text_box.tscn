@@ -17,19 +17,19 @@ border_width_bottom = 5
 [node name="officeScene" type="CanvasLayer"]
 script = ExtResource("1_d0rgj")
 
-[node name="Correctsizedoffice" type="Sprite2D" parent="."]
+[node name="OfficeScene" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(580.00006, 321)
 scale = Vector2(0.42, 0.42)
 texture = ExtResource("2_74mx6")
 
-[node name="Button" type="Button" parent="Correctsizedoffice"]
+[node name="OpenComputerButton" type="Button" parent="OfficeScene"]
 offset_left = -190.47632
 offset_top = 35.714294
 offset_right = 178.57129
 offset_bottom = 299.99994
 
-[node name="TextBoxContainor" type="MarginContainer" parent="Correctsizedoffice"]
+[node name="TextBoxContainor" type="MarginContainer" parent="OfficeScene"]
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -47,24 +47,24 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="Panel" type="Panel" parent="Correctsizedoffice/TextBoxContainor"]
+[node name="Panel" type="Panel" parent="OfficeScene/TextBoxContainor"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ss407")
 
-[node name="MarginContainer" type="MarginContainer" parent="Correctsizedoffice/TextBoxContainor"]
+[node name="MarginContainer" type="MarginContainer" parent="OfficeScene/TextBoxContainor"]
 layout_mode = 2
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="Panel" type="Panel" parent="Correctsizedoffice/TextBoxContainor/MarginContainer"]
+[node name="Panel" type="Panel" parent="OfficeScene/TextBoxContainor/MarginContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Correctsizedoffice/TextBoxContainor/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="OfficeScene/TextBoxContainor/MarginContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Correctsizedoffice/TextBoxContainor/MarginContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="OfficeScene/TextBoxContainor/MarginContainer/HBoxContainer"]
 z_index = 2
 layout_mode = 2
 size_flags_horizontal = 3
@@ -79,20 +79,20 @@ Right Arrow Key: Next dialogue (press now)"
 autowrap_mode = 3
 clip_text = true
 
-[node name="JustScreen" type="Sprite2D" parent="."]
+[node name="ComputerScreen" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(579, 322)
 scale = Vector2(0.42, 0.42)
 texture = ExtResource("4_polir")
 script = ExtResource("4_ejigk")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="JustScreen"]
+[node name="HBoxContainer" type="HBoxContainer" parent="ComputerScreen"]
 offset_left = -1180.9524
 offset_top = -630.9524
 offset_right = 1254.7617
 offset_bottom = 640.4762
 
-[node name="Label" type="Label" parent="JustScreen/HBoxContainer"]
+[node name="Label" type="Label" parent="ComputerScreen/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -103,7 +103,7 @@ text = "Welcome to your official ConventionCorp computer! You will use this to v
 autowrap_mode = 3
 clip_text = true
 
-[node name="Button" type="Button" parent="JustScreen"]
+[node name="Button" type="Button" parent="ComputerScreen"]
 offset_left = -271.42862
 offset_top = 502.38104
 offset_right = 300.00003
@@ -111,13 +111,13 @@ offset_bottom = 680.95233
 theme_override_font_sizes/font_size = 42
 text = "Return to Office"
 
-[node name="MarginContainer2" type="MarginContainer" parent="JustScreen"]
+[node name="MarginContainer2" type="MarginContainer" parent="ComputerScreen"]
 offset_left = -1071.4286
 offset_top = -500.00003
 offset_right = -752.381
 offset_bottom = -440.47623
 
-[node name="TextEdit" type="TextEdit" parent="JustScreen/MarginContainer2"]
+[node name="TextEdit" type="TextEdit" parent="ComputerScreen/MarginContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 29
 placeholder_text = "Type Variable Name"
@@ -184,7 +184,7 @@ offset_bottom = -5.799999
 theme_override_colors/font_color = Color(0.4392157, 0.76862746, 0.37254903, 1)
 text = "Text Display Speed"
 
-[connection signal="pressed" from="Correctsizedoffice/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="JustScreen/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="OfficeScene/OpenComputerButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ComputerScreen/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Pause/StartOver" to="." method="_on_start_over_pressed"]
 [connection signal="pressed" from="Pause/Resume" to="." method="_on_resume_pressed"]

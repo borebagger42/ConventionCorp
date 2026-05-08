@@ -1,0 +1,8 @@
+Hello Dr. Newman!
+Press 1 to see JoJo's terrible code from ten years ago. \nPress 2 to see JoJo's somewhat decent code from two weeks ago.
+Click the computer to see the code, then choose the option of the advice to give young JoJo: \n1. Change the variable inPlay to actionTaken \n2. Remove the commented out code
+Click the computer to see the code, then choose the option of the advice to give present day JoJo: \n1. Change universalController to treeNode \n2: You're a genius, no changes needed
+Go back to the code, it should have changed now.
+Go back to the code, it should have changed now.
+Go back to the code, it should have changed now.
+Go back to the code, it should have changed now.

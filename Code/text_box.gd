@@ -7,16 +7,21 @@ Credits: This was developed as a capstone project under the supervision of Dr. C
 extends CanvasLayer
 
 #Initilization of variables representing on screen elements
-@onready var textBoxLabel = $Correctsizedoffice/TextBoxContainor/MarginContainer/HBoxContainer/Label
-@onready var codeBoxLabel = $JustScreen/HBoxContainer/Label
+@onready var textBoxLabel = $OfficeScene/TextBoxContainor/MarginContainer/HBoxContainer/Label
+@onready var codeBoxLabel = $ComputerScreen/HBoxContainer/Label
+@onready var inputBox = $ComputerScreen/MarginContainer2
+@onready var inputText = $ComputerScreen/MarginContainer2/TextEdit
+@onready var textSpeedSlider = $Pause/Panel/HSlider
 
 
 #Initializing variables that go into the dialogue tree. d0 represents the root node, d1,d2,d3 are it's children, etc.
-##d0 is an example of how to create a subtree that doesn't affect the game loop. The subtree must be it's own array and each element of the subtree must be it's own array. Two items in the same node of the subtree represent multiple dialogue screens.
-@onready var d0 = [["Hello! My name is Jeb and I am your new hire from planet Asblamflabacor! How are you today? \n4. I'm doing great! How are you? \n5. I'm doing terribly, How are you?"] ,["Awesome! I am not having such a good day because I was told you guys use something called variable names here rather than memorizing every storage address like we do on Asblamflabacor? And apparently there's rules around what I am supposed to name these variables??? I sent the code I'm working on to your computer, could you give me an example of a variable name?"],["I too am having a bad day I was told you guys use something called variable names here rather than memorizing every storage address like we do on Asblamflabacor? And apparently there's rules around what I am supposed to name these variables??? I sent the code I'm working on to your computer, could you give me an example of a variable name?"]]
+#d0 is an example of how to create a subtree that doesn't affect the game loop. The subtree must be it's own array and each element of the subtree must be it's own array. Two items in the same node of the subtree represent multiple dialogue screens.
+@onready var d0 = [["Hello! My name is Jeb and I am your new hire from planet Asblamflabacor! How are you today? \n4. I'm doing great! How are you? \n5. I'm doing terribly, How are you?"] ,["Awesome! I am not having such a good day because I was told you guys use something called variable names here rather than memorizing every storage address like we do on Asblamflabacor? And apparently there's rules around what I am supposed to name these variables??? I sent the code I'm working on to your computer, could you give me an example of a variable name that uses two words?"],["I too am having a bad day I was told you guys use something called variable names here rather than memorizing every storage address like we do on Asblamflabacor? And apparently there's rules around what I am supposed to name these variables??? I sent the code I'm working on to your computer, could you give me an example of a variable name that uses two words?"]]
+
 @onready var d1 = "Thanks! I see that you have capitalized some letters. How often should I be capitalizing these letters?\n1. Anytime you want to emphasize a particular letter \n2. When you start a new word or abbreviation after the first \n3. Only when you want to emphasize a particular word in a variable name"
 @onready var d2 = "Thanks! I see that you are using underscores. How often should I put underscores in my variable name?\n1. Anytime you want to emphasize a particular letter \n2. When you start a new word or abbreviation after the first \n3. Only when you want to emphasize a particular word in a variable name"
 @onready var d3 = "Thanks! Not having any capitol letters or underscores to make things readable to humans makes me feel like im back on Asblamflabacor! "
+
 @onready var d4 = "That sounds like fun! Going to take some getting used to. Another question for you: How specific should my names be? \n1. Longer than you have. Keep it consise but use full words unless it's a commonly known abbreviation. \n2. What you have is great! No changes needed, abbreviate everything. \n3. You should be as specific as possible. Anyone reading should know exactly what it is"
 @onready var d5 = "Ugh, sounds like a lot of work but I see the benefits. Another question for you: How specific should my names be? \n1. Longer than you have. Keep it consise but use full words unless it's a commonly known abbreviation. \n2. What you have is great! No changes needed, abbreviate everything. \n3. You should be as specific as possible. Anyone reading should know exactly what it is"
 @onready var d6 = "Awesome! Just like back on Asblamflabacor. Another question for you: How specific should my names be? \n1. Longer than you have. Keep it consise but use full words unless it's a commonly known abbreviation. \n2. What you have is great! No changes needed, abbreviate everything. \n3. You should be as specific as possible. Anyone reading should know exactly what it is"
@@ -26,39 +31,42 @@ extends CanvasLayer
 @onready var d10 = "Another question for you: How specific should my names be? \n1. Longer than you have. Keep it consise but use full words unless it's a commonly known abbreviation. \n2. What you have is great! No changes needed, abbreviate everything. \n3. You should be as specific as possible. Anyone reading should know exactly what it is"
 @onready var d11 = d10
 @onready var d12 = d10
-@onready var d13 = "Thanks so much for your help! Take a look at my final beautiful code!"
-@onready var d14 = "Thanks so much for your help! Take a look at my final beautiful code!"
-@onready var d15 = "Thanks so much for your help! Take a look at my final beautiful code!"
-@onready var d16 = "Thanks so much for your help! Take a look at my final beautiful code!"
-@onready var d17 = "Thanks so much for your help! Take a look at my final beautiful code!"
-@onready var d18 = "Thanks so much for your help! Take a look at my final beautiful code!"
-@onready var d19 = "Thanks so much for your help! Take a look at my final beautiful code!"
-@onready var d20 = "Thanks so much for your help! Take a look at my final beautiful code!"
-@onready var d21 = "Thanks so much for your help! Take a look at my final beautiful code!"
-@onready var d22 = "Thanks so much for your help! Take a look at my final beautiful code!"
-@onready var d23 = "Thanks so much for your help! Take a look at my final beautiful code!"
-@onready var d24 = "Thanks so much for your help! Take a look at my final beautiful code!"
-@onready var d25 = "Thanks so much for your help! Take a look at my final beautiful code!"
-@onready var d26 = "Thanks so much for your help! Take a look at my final beautiful code!"
-@onready var d27 = "Thanks so much for your help! Take a look at my final beautiful code!"
-@onready var d28 = "Thanks so much for your help! Take a look at my final beautiful code!"
-@onready var d29 = "Thanks so much for your help! Take a look at my final beautiful code!"
-@onready var d30 = "Thanks so much for your help! Take a look at my final beautiful code!"
-@onready var d31 = "Thanks so much for your help! Take a look at my final beautiful code!"
-@onready var d32 = "Thanks so much for your help! Take a look at my final beautiful code!"
-@onready var d33 = "Thanks so much for your help! Take a look at my final beautiful code!"
-@onready var d34 = "Thanks so much for your help! Take a look at my final beautiful code!"
-@onready var d35 = "Thanks so much for your help! Take a look at my final beautiful code!"
-@onready var d36 = "Thanks so much for your help! Take a look at my final beautiful code!"
-@onready var d37 = "Thanks so much for your help! Take a look at my final beautiful code!"
-@onready var d38 = "Thanks so much for your help! Take a look at my final beautiful code!"
-@onready var d39 = "Thanks so much for your help! Take a look at my final beautiful code!"
+
+@onready var d13 = "Thanks so much for your help! Take a look at my code. How did I do?"
+@onready var d14 = d13
+@onready var d15 = d13
+@onready var d16 = d13
+@onready var d17 = d13
+@onready var d18 = d13
+@onready var d19 = d13
+@onready var d20 = d13
+@onready var d21 = d13
+@onready var d22 = d13
+@onready var d23 = d13
+@onready var d24 = d13
+@onready var d25 = d13
+@onready var d26 = d13
+@onready var d27 = d13
+@onready var d28 = d13
+@onready var d29 = d13
+@onready var d30 = d13
+@onready var d31 = d13
+@onready var d32 = d13
+@onready var d33 = d13
+@onready var d34 = d13
+@onready var d35 = d13
+@onready var d36 = d13
+@onready var d37 = d13
+@onready var d38 = d13
+@onready var d39 = d13
 
 #Variables that represent the diagetic code represented on the computer. Subtrees are not compaitble here, each variable must be it's own string. 
-@onready var c0 = "def func HowManyAtendees? \n    0x7ffe5367e044 = FetchAtendeeData()\n     __________ = 0x7ffe5367e044.GetAtendees() \n    return(_______)"
+@onready var c0 = "def func HowManyAtendees? \n    0x7ffe5367e044 = FetchAtendeeData()\n     __________ = 0x7ffe5367e044.GetAtendees() \n    return(_______) \n\n\n\n\n\n\nPress enter to send example code back to Jeb"
+
 @onready var c1 = "placeholder"
 @onready var c2 = "placeholder"
 @onready var c3 = "placeholder"
+
 @onready var c4 = "def class ConventionVenue: \n     NtTlCCPt = 200 \n     nrMS = 10\n     aDaC = True \n     l = (44.2231,99.1111)"
 @onready var c5 = "def class ConventionVenue: \n     nTtlCpt = 200 \n     nRms = 10\n     adaC = True \n     l = (44.2231,99.1111)"
 @onready var c6 = "def class ConventionVenue: \n     Nttlcpt = 200 \n     nrMS = 10\n     Adac = True \n     l = (44.2231,99.1111)"
@@ -68,6 +76,7 @@ extends CanvasLayer
 @onready var c10 = "def class ConventionVenue: \n     nttlccpt = 200 \n     nrms = 10\n     adac = True \n     l = (44.2231,99.1111)"
 @onready var c11 = c10
 @onready var c12 = c10
+
 @onready var c13 = "def class ConventionVenue: \n     NuMtOtAlCaPaCiTy = 200 \n     NuMrOoMs = 10\n     aDaCoMpLiAnCe = True \n     lOcAtIoN = (44.2231,99.1111)"
 @onready var c14 = "def class ConventionVenue: \n     NtTlCCPt = 200 \n     nrMS = 10\n     aDaC = True \n     l = (44.2231,99.1111)"
 @onready var c15 = "def class ConventionVenue: \n     tHeMaXiMuMnUmBeRoFpEoPlEtHeVeNuEcAnAcCoMmOdAtEiNtErMsOfGuEsTsNoTiNcLuDiNgStAfFoRpReSeNtErS = 200 \n     tHeNuMbErOfRoOmStHaTwEcAnUsEiNtHeVeNuEfOrPrEsEnTaTiOnSnOtInClUdInGbAtHrOoMsAnDbAcKoFhOuSeStUfFjUsTcOnFrEnCeRoOmSaNdBaLlRoOmS = 10\n     wHeThErOrNoTtHeVeNuEhAsRaMpSeLeVaToRsAnDoThErAdAcOmPlIaNtFeAtUrEs = True \n     tHeExAcTcOoRdInAtEsOfThEvEnUe = (44.2231,99.1111)"
@@ -98,17 +107,17 @@ extends CanvasLayer
 
 #Initialization of the arrays that store the variables for both the dialogue box and computer code that will be iterated over. 
 @onready var dialogueArray = [
-	d0, d1, d2, d3, d4, d5, d6, d7, d8, d9, 
-	d10, d11, d12, d13, d14, d15, d16, d17, d18, d19, 
-	d20, d21, d22, d23, d24, d25, d26, d27, d28, d29,
-	d30, d31, d32, d33, d34, d35, d36, d37, d38, d39
+						d0, 
+					d1, d2, d3, 
+		d4, d5, d6, d7, d8, d9, d10, d11, d12, 
+	d13, d14, d15, d16, d17, d18, d19, d20, d21, d22, d23, d24, d25, d26, d27, d28, d29, d30, d31, d32, d33, d34, d35, d36, d37, d38, d39
 ]
 
 @onready var codeArray = [
-	c0, c1, c2, c3, c4, c5, c6, c7, c8, c9, 
-	c10, c11, c12, c13, c14, c15, c16, c17, c18, c19, 
-	c20, c21, c22, c23, c24, c25, c26, c27, c28, c29,
-	c30, c31, c32, c33, c34, c35, c36, c37, c38, c39
+						c0, 
+					c1, c2, c3, 
+		c4, c5, c6, c7, c8, c9, c10, c11, c12, 
+	c13, c14, c15, c16, c17, c18, c19, c20, c21, c22, c23, c24, c25, c26, c27, c28, c29, c30, c31, c32, c33, c34, c35, c36, c37, c38, c39
 ]
 
 #Initialization of variables that control the dialogue box. 
@@ -123,61 +132,73 @@ func _ready():
 	#Default text displayed on computer and in textbox
 	textBoxLabel.text = "                                                    Controls Menu \n1,2,3,4,5: Dialogue Responses                                                  Esc:pause\nTab: Continue dialogue (only if ... at end)                                     Enter: Submit your written code\nRight Arrow Key: Next dialogue (press now)"
 	codeBoxLabel.text = "Welcome to your official ConventionCorp computer! You will use this to view code written by your staff or sometimes directly give them code in a box like the one below."
+	inputText.text = ""
 	pass
 	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if (Input.is_action_just_pressed("next")):
+	if (Input.is_action_just_pressed("next")): #Handles clicking the right arrow key
 		if universalController != 0:
 			universalController = (universalController*3)+1
 		updateBoxes(universalController)
-	if Input.is_action_just_pressed("OneKey"):
+	
+	if Input.is_action_just_pressed("OneKey"): # 1-3 Handles selecting dialogue options for main game loop
 		universalController = (universalController*3)+1
 		updateBoxes(universalController)
+	
 	if Input.is_action_just_pressed("TwoKey"):
 		universalController = (universalController*3)+2
 		updateBoxes(universalController)
+	
 	if Input.is_action_just_pressed("ThreeKey"):
 		universalController = (universalController*3)+3
 		updateBoxes(universalController)
-	if Input.is_action_just_pressed("FourKey"):
+	
+	if Input.is_action_just_pressed("FourKey"): #4-5 handles selecting dialogue options for subtrees
 		scroller = 0
 		localController = (localController*2)+1
 		addText(universalController)
+	
 	if Input.is_action_just_pressed("FiveKey"):
 		scroller = 0
 		localController = (localController*2)+2
 		addText(universalController)
-	if Input.is_action_just_pressed("tabKey"):
+	
+	if Input.is_action_just_pressed("tabKey"): #Handles multi screen scrolling
 		scroller+=1
 		addText(universalController)
-	if Input.is_action_just_pressed("esc"):
+	
+	if Input.is_action_just_pressed("esc"): #Pause button
 		pauseScreen()
-	if Input.is_action_just_pressed("enter"):
+	
+	if Input.is_action_just_pressed("enter"): #Handles taking in computer input
 		checkInput()
 		universalController = (universalController*3)+detectCase(checkInput())
 		updateBoxes(universalController)
 
+
+#Function that handles how to pause and unpause the game
 func pauseScreen():
-	if paused == false:
-		$Correctsizedoffice.hide()
-		$JustScreen.hide()
+	if paused == false: #When the game isn't paused, pause the game
+		$OfficeScene.hide()
+		$ComputerScreen.hide()
 		$Pause.show()
 		paused = true
-	else:
-		$Correctsizedoffice.show()
-		$JustScreen.hide()
+	else: #Functionality for hitting resume or escape on pause screen
+		$OfficeScene.show()
+		$ComputerScreen.hide()
 		$Pause.hide()
 		paused = false
 		
-
+		
+#Variables defining what comes before and after the input for the computer text of c1
 @onready var c1p1 = "def func HowManyAtendees? \n    0x7ffe5367e044 = FetchAtendeeData()\n     "
-	
 @onready var c1p2 = " = 0x7ffe5367e044.GetAtendees() \n     return("
 @onready var c1input = ""
-func checkInput():
-	c1input = $JustScreen/MarginContainer2/TextEdit.text
+
+func checkInput(): #Function that inserts the text that was input into the code
+	c1input = inputText.text
 	if universalController == 0:
 		var finalc1 = c1p1 + c1input + c1p2 +c1input + ")"
 		codeArray[universalController*3+1] = finalc1
@@ -185,83 +206,82 @@ func checkInput():
 		codeArray[universalController*3+3] = finalc1
 	return(c1input)
 		
-func detectCase(text): #snakeCase = 1 camel_case = 2 neither = 3
-	for item in text:
+		
+func detectCase(text): #Detects if it is snake case, camel case, or neither and sents the universal controller down the appropriate tree path
+	for item in text: #Detects camel case by looking for underscores
 		if item == "_":
 			return 2
-		elif item.unicode_at(0) >= 65 and item.unicode_at(0) <= 90:
+		elif item.unicode_at(0) >= 65 and item.unicode_at(0) <= 90: #Detects snake case by looking for upper case letters
 			return 1
-	return 3
+	return 3 #Neither camel or snake case
 
 
-func addText(dialogueArrNum):
-	if dialogueArrNum >=len (dialogueArray):
-		textBoxLabel.text = ("It seems the god in charge of what I say has ran out of words for me so I guess we're done here!")
-		textBoxLabel.visible_ratio = 0
+func addText(dialogueArrNum): #Function that adds text to the dialogue box
+	if dialogueArrNum >=len (dialogueArray):#Default for if they press enter beyond the planned demo
+		textBoxLabel.text = ("It seems the god in charge of what I say has ran out of words for me so I guess we're done here!") 
+		textBoxLabel.visible_ratio = 0 #201-203 Reveals text in text box according to setting in pause menu
 		var tween = create_tween()
-		tween.tween_property(textBoxLabel, "visible_ratio", 1, 10-$Pause/Panel/HSlider.value)
-	else:
+		tween.tween_property(textBoxLabel, "visible_ratio", 1, 10-textSpeedSlider.value) 
+	
+	else: #Logic for outputting dialogue from dialogue tree
 		var dialogue = dialogueArray[dialogueArrNum]
-		if typeof(dialogue) == TYPE_STRING:
+		if typeof(dialogue) == TYPE_STRING: #If it's just a string, output it
 			textBoxLabel.text = dialogue
-		else:
+		else: #If it is an array (meaning subtree), move to subtree functionality
 			addSecondLevelText(localController,dialogue)
-		textBoxLabel.visible_ratio = 0
+		textBoxLabel.visible_ratio = 0 #Same code as 201-203 to reveal text according to setting in pause menu
 		var tween = create_tween()
-		tween.tween_property(textBoxLabel, "visible_ratio", 1, 10-$Pause/Panel/HSlider.value)
+		tween.tween_property(textBoxLabel, "visible_ratio", 1, 10-textSpeedSlider.value)
 		
-func addSecondLevelText(controllerNum,array):
-	var da = array[controllerNum]
-	var dialogue = da[scroller]
+		
+func addSecondLevelText(controllerNum,array): # Logic for displaying subtree text
+	var subArray = array[controllerNum]
+	var dialogue = subArray[scroller]
 	textBoxLabel.text = dialogue
 	textBoxLabel.visible_ratio = 0
 	var tween = create_tween()
-	tween.tween_property(textBoxLabel, "visible_ratio", 1, 10-$Pause/Panel/HSlider.value)
+	tween.tween_property(textBoxLabel, "visible_ratio", 1, 10-textSpeedSlider.value)
 	
 
-
-func updateBoxes(num):
+func updateBoxes(num): #Function that is called when universal controller is changed, calls functions to change dialogue box and diagetic computer box
 	addText(num)
 	addCode(num)
 	
-func addCode(codeArrNum):
-	if codeArrNum >=len (codeArray):
-		codeBoxLabel.text = ("Oh no! It looks like our overlords ran out of things for us to say. I guess I'll see you whenever they write more!")
+	
+func addCode(codeArrNum): #Logic for displaying text to diagetic computer
+	if codeArrNum >=len (codeArray): #For if the universal controller goes out of the range of defined text
+		codeBoxLabel.text = ("This is your ConventionCorp Computer")
 		codeBoxLabel.visible_ratio = 0
 		var tween = create_tween()
-		tween.tween_property(codeBoxLabel, "visible_ratio", 1, 10-$Pause/Panel/HSlider.value)
-	else:
+		tween.tween_property(codeBoxLabel, "visible_ratio", 1, 10-textSpeedSlider.value)
+	else: #For if the universal controller is within the range of defined text, display text to computer screen
 		codeBoxLabel.text = codeArray[codeArrNum]
 		codeBoxLabel.visible_ratio = 0
 		var tween = create_tween()
-		tween.tween_property(codeBoxLabel, "visible_ratio", 1, 10-$Pause/Panel/HSlider.value)
+		tween.tween_property(codeBoxLabel, "visible_ratio", 1, 10-textSpeedSlider.value)
 
-func _on_button_pressed() -> void:
-	var userInput = $JustScreen/MarginContainer2/TextEdit
-	if $Correctsizedoffice.visible == true:
-		$Correctsizedoffice.hide()
-		$JustScreen.show()
+
+func _on_button_pressed() -> void: #If the button to open the computer is pressed
+	var userInput = inputText #Box that user's can put input into
+	if $OfficeScene.visible == true: #If the office scene is currently displayed
+		$OfficeScene.hide()
+		$ComputerScreen.show() #Hide the office and open the computer screen
 		if (universalController == 0):
-			$JustScreen/MarginContainer2.show()
-			userInput.show()
+			inputBox.show()
+			userInput.show() #Show the input box for certian level of dialogue tree
 			
-		else:
+		else: #Hide the input box for others
 			userInput.hide()
-			$JustScreen/MarginContainer2.hide()
+			inputBox.hide()
 			
 		
 	else:
-		$Correctsizedoffice.show()
-		$JustScreen.hide()
+		$OfficeScene.show()
+		$ComputerScreen.hide() #Return to main office scene
 	
-	
-
-
-func _on_start_over_pressed() -> void:
+func _on_start_over_pressed() -> void: #Unpauses the screen then calls ready, which resets the game
 	pauseScreen()
 	_ready()
 	
-
-
-func _on_resume_pressed() -> void:
+func _on_resume_pressed() -> void: #Resumes game by hiding pause screen
 	pauseScreen()

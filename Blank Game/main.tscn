@@ -1,11 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://dd1tcxn5o6ojm"]
 
-[ext_resource type="Script" uid="uid://cl8icjmit7m47" path="res://text_box.gd" id="1_d0rgj"]
-[ext_resource type="FontFile" uid="uid://p3q73cliu6i4" path="res://Pixelpurl-0vBPP.ttf" id="1_k7ve7"]
-[ext_resource type="Texture2D" uid="uid://dlpour05kc0va" path="res://officewithalien.png" id="2_74mx6"]
-[ext_resource type="Script" uid="uid://dot45aspkrcr5" path="res://just_screen.gd" id="4_ejigk"]
-[ext_resource type="Texture2D" uid="uid://bjyldic1vvso8" path="res://justScreen.png" id="4_polir"]
-[ext_resource type="Texture2D" uid="uid://jtsh4xjc4cob" path="res://360_F_971120643_3lpnwkCDDw4Glc7hWJabBcfG5bZAknXq.jpg" id="6_74mx6"]
+[ext_resource type="Script" uid="uid://cl8icjmit7m47" path="res://text_box.gd" id="1_lquwl"]
+[ext_resource type="Texture2D" uid="uid://dlpour05kc0va" path="res://OfficeScene.png" id="2_7mycd"]
+[ext_resource type="FontFile" uid="uid://p3q73cliu6i4" path="res://Pixelpurl-0vBPP.ttf" id="3_272bh"]
+[ext_resource type="Texture2D" uid="uid://bjyldic1vvso8" path="res://ComputerScreen.png" id="4_5vw27"]
+[ext_resource type="Texture2D" uid="uid://jtsh4xjc4cob" path="res://PauseMenu.jpg" id="5_kek77"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ss407"]
 bg_color = Color(0, 0, 0, 1)
@@ -14,14 +13,28 @@ border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
 
+[sub_resource type="GDScript" id="GDScript_ejigk"]
+script/source = "extends Sprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
 [node name="officeScene" type="CanvasLayer"]
-script = ExtResource("1_d0rgj")
+script = ExtResource("1_lquwl")
 
 [node name="OfficeScene" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(580.00006, 321)
 scale = Vector2(0.42, 0.42)
-texture = ExtResource("2_74mx6")
+texture = ExtResource("2_7mycd")
 
 [node name="Button" type="Button" parent="OfficeScene"]
 offset_left = -190.47632
@@ -70,7 +83,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("1_k7ve7")
+theme_override_fonts/font = ExtResource("3_272bh")
 theme_override_font_sizes/font_size = 72
 text = "                                                    Controls Menu 
 1,2,3,4,5: Dialogue Responses                                                  Esc:pause
@@ -83,8 +96,8 @@ clip_text = true
 visible = false
 position = Vector2(579, 322)
 scale = Vector2(0.42, 0.42)
-texture = ExtResource("4_polir")
-script = ExtResource("4_ejigk")
+texture = ExtResource("4_5vw27")
+script = SubResource("GDScript_ejigk")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ComputerScreen"]
 offset_left = -1180.9524
@@ -97,7 +110,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_k7ve7")
+theme_override_fonts/font = ExtResource("3_272bh")
 theme_override_font_sizes/font_size = 72
 text = "Welcome to your official ConventionCorp computer! You will use this to view code written by your staff or sometimes directly give them code in a box like the one below."
 autowrap_mode = 3
@@ -116,7 +129,7 @@ visible = false
 z_index = -1
 position = Vector2(579.375, 321)
 scale = Vector2(1.8055556, 1.8055556)
-texture = ExtResource("6_74mx6")
+texture = ExtResource("5_kek77")
 
 [node name="StartOver" type="Button" parent="Pause"]
 anchors_preset = 8

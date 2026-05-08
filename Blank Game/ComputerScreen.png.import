@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlpour05kc0va"
-path="res://.godot/imported/officewithalien.png-3cd149ae69da1021acb2a44d9c92ef0d.ctex"
+uid="uid://bjyldic1vvso8"
+path="res://.godot/imported/ComputerScreen.png-ac421e0b156a4d2e6195e1d9b17dfcf4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://officewithalien.png"
-dest_files=["res://.godot/imported/officewithalien.png-3cd149ae69da1021acb2a44d9c92ef0d.ctex"]
+source_file="res://ComputerScreen.png"
+dest_files=["res://.godot/imported/ComputerScreen.png-ac421e0b156a4d2e6195e1d9b17dfcf4.ctex"]
 
 [params]
 

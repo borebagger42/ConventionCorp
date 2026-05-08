@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjyldic1vvso8"
-path="res://.godot/imported/justScreen.png-a9eb1b31205d7f0052f2c0a0758c5763.ctex"
+uid="uid://dlpour05kc0va"
+path="res://.godot/imported/OfficeScene.png-38b3a4ff5da7ac833232c7c68cd33695.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://justScreen.png"
-dest_files=["res://.godot/imported/justScreen.png-a9eb1b31205d7f0052f2c0a0758c5763.ctex"]
+source_file="res://OfficeScene.png"
+dest_files=["res://.godot/imported/OfficeScene.png-38b3a4ff5da7ac833232c7c68cd33695.ctex"]
 
 [params]
 

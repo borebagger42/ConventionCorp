@@ -9,6 +9,9 @@ extends CanvasLayer
 #Initilization of variables representing on screen elements
 @onready var textBoxLabel = $OfficeScene/TextBoxContainor/MarginContainer/HBoxContainer/Label
 @onready var codeBoxLabel = $ComputerScreen/HBoxContainer/Label
+@onready var inputBox = $ComputerScreen/MarginContainer2
+@onready var inputText = $ComputerScreen/MarginContainer2/TextEdit
+@onready var textSpeedSlider = $Pause/Panel/HSlider
 
 
 #Initializing variables that go into the dialogue tree. d0 represents the root node, d1,d2,d3 are it's children, etc.
@@ -58,7 +61,7 @@ extends CanvasLayer
 @onready var d39 = d13
 
 #Variables that represent the diagetic code represented on the computer. Subtrees are not compaitble here, each variable must be it's own string. 
-@onready var c0 = "def func HowManyAtendees? \n    0x7ffe5367e044 = FetchAtendeeData()\n     __________ = 0x7ffe5367e044.GetAtendees() \n    return(_______)"
+@onready var c0 = "def func HowManyAtendees? \n    0x7ffe5367e044 = FetchAtendeeData()\n     __________ = 0x7ffe5367e044.GetAtendees() \n    return(_______) \n\n\n\n\n\n\nPress enter to send example code back to Jeb"
 
 @onready var c1 = "placeholder"
 @onready var c2 = "placeholder"
@@ -104,17 +107,17 @@ extends CanvasLayer
 
 #Initialization of the arrays that store the variables for both the dialogue box and computer code that will be iterated over. 
 @onready var dialogueArray = [
-	d0, d1, d2, d3, d4, d5, d6, d7, d8, d9, 
-	d10, d11, d12, d13, d14, d15, d16, d17, d18, d19, 
-	d20, d21, d22, d23, d24, d25, d26, d27, d28, d29,
-	d30, d31, d32, d33, d34, d35, d36, d37, d38, d39
+						d0, 
+					d1, d2, d3, 
+		d4, d5, d6, d7, d8, d9, d10, d11, d12, 
+	d13, d14, d15, d16, d17, d18, d19, d20, d21, d22, d23, d24, d25, d26, d27, d28, d29, d30, d31, d32, d33, d34, d35, d36, d37, d38, d39
 ]
 
 @onready var codeArray = [
-	c0, c1, c2, c3, c4, c5, c6, c7, c8, c9, 
-	c10, c11, c12, c13, c14, c15, c16, c17, c18, c19, 
-	c20, c21, c22, c23, c24, c25, c26, c27, c28, c29,
-	c30, c31, c32, c33, c34, c35, c36, c37, c38, c39
+						c0, 
+					c1, c2, c3, 
+		c4, c5, c6, c7, c8, c9, c10, c11, c12, 
+	c13, c14, c15, c16, c17, c18, c19, c20, c21, c22, c23, c24, c25, c26, c27, c28, c29, c30, c31, c32, c33, c34, c35, c36, c37, c38, c39
 ]
 
 #Initialization of variables that control the dialogue box. 
@@ -194,7 +197,7 @@ func pauseScreen():
 @onready var c1input = ""
 
 func checkInput(): #Function that inserts the text that was input into the code
-	c1input = $ComputerScreen/MarginContainer2/TextEdit.text
+	c1input = inputText.text
 	if universalController == 0:
 		var finalc1 = c1p1 + c1input + c1p2 +c1input + ")"
 		codeArray[universalController*3+1] = finalc1
@@ -217,7 +220,7 @@ func addText(dialogueArrNum): #Function that adds text to the dialogue box
 		textBoxLabel.text = ("It seems the god in charge of what I say has ran out of words for me so I guess we're done here!") 
 		textBoxLabel.visible_ratio = 0 #201-203 Reveals text in text box according to setting in pause menu
 		var tween = create_tween()
-		tween.tween_property(textBoxLabel, "visible_ratio", 1, 10-$Pause/Panel/HSlider.value) 
+		tween.tween_property(textBoxLabel, "visible_ratio", 1, 10-textSpeedSlider.value) 
 	
 	else: #Logic for outputting dialogue from dialogue tree
 		var dialogue = dialogueArray[dialogueArrNum]
@@ -227,7 +230,7 @@ func addText(dialogueArrNum): #Function that adds text to the dialogue box
 			addSecondLevelText(localController,dialogue)
 		textBoxLabel.visible_ratio = 0 #Same code as 201-203 to reveal text according to setting in pause menu
 		var tween = create_tween()
-		tween.tween_property(textBoxLabel, "visible_ratio", 1, 10-$Pause/Panel/HSlider.value)
+		tween.tween_property(textBoxLabel, "visible_ratio", 1, 10-textSpeedSlider.value)
 		
 		
 func addSecondLevelText(controllerNum,array): # Logic for displaying subtree text
@@ -236,7 +239,7 @@ func addSecondLevelText(controllerNum,array): # Logic for displaying subtree tex
 	textBoxLabel.text = dialogue
 	textBoxLabel.visible_ratio = 0
 	var tween = create_tween()
-	tween.tween_property(textBoxLabel, "visible_ratio", 1, 10-$Pause/Panel/HSlider.value)
+	tween.tween_property(textBoxLabel, "visible_ratio", 1, 10-textSpeedSlider.value)
 	
 
 func updateBoxes(num): #Function that is called when universal controller is changed, calls functions to change dialogue box and diagetic computer box
@@ -249,26 +252,26 @@ func addCode(codeArrNum): #Logic for displaying text to diagetic computer
 		codeBoxLabel.text = ("This is your ConventionCorp Computer")
 		codeBoxLabel.visible_ratio = 0
 		var tween = create_tween()
-		tween.tween_property(codeBoxLabel, "visible_ratio", 1, 10-$Pause/Panel/HSlider.value)
+		tween.tween_property(codeBoxLabel, "visible_ratio", 1, 10-textSpeedSlider.value)
 	else: #For if the universal controller is within the range of defined text, display text to computer screen
 		codeBoxLabel.text = codeArray[codeArrNum]
 		codeBoxLabel.visible_ratio = 0
 		var tween = create_tween()
-		tween.tween_property(codeBoxLabel, "visible_ratio", 1, 10-$Pause/Panel/HSlider.value)
+		tween.tween_property(codeBoxLabel, "visible_ratio", 1, 10-textSpeedSlider.value)
 
 
 func _on_button_pressed() -> void: #If the button to open the computer is pressed
-	var userInput = $ComputerScreen/MarginContainer2/TextEdit #Box that user's can put input into
+	var userInput = inputText #Box that user's can put input into
 	if $OfficeScene.visible == true: #If the office scene is currently displayed
 		$OfficeScene.hide()
 		$ComputerScreen.show() #Hide the office and open the computer screen
 		if (universalController == 0):
-			$ComputerScreen/MarginContainer2.show()
+			inputBox.show()
 			userInput.show() #Show the input box for certian level of dialogue tree
 			
 		else: #Hide the input box for others
 			userInput.hide()
-			$ComputerScreen/MarginContainer2.hide()
+			inputBox.hide()
 			
 		
 	else:

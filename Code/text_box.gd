@@ -132,6 +132,7 @@ func _ready():
 	#Default text displayed on computer and in textbox
 	textBoxLabel.text = "                                                    Controls Menu \n1,2,3,4,5: Dialogue Responses                                                  Esc:pause\nTab: Continue dialogue (only if ... at end)                                     Enter: Submit your written code\nRight Arrow Key: Next dialogue (press now)"
 	codeBoxLabel.text = "Welcome to your official ConventionCorp computer! You will use this to view code written by your staff or sometimes directly give them code in a box like the one below."
+	inputText.text = ""
 	pass
 	
 	

@@ -16,49 +16,49 @@ extends CanvasLayer
 
 #Initializing variables that go into the dialogue tree. d0 represents the root node, d1,d2,d3 are it's children, etc.
 #d0 is an example of how to create a subtree that doesn't affect the game loop. The subtree must be it's own array and each element of the subtree must be it's own array. Two items in the same node of the subtree represent multiple dialogue screens.
-@onready var d0 = [["Hello! My name is Jeb and I am your new hire from planet Asblamflabacor! How are you today? \n4. I'm doing great! How are you? \n5. I'm doing terribly, How are you?"] ,["Awesome! I am not having such a good day because I was told you guys use something called variable names here rather than memorizing every storage address like we do on Asblamflabacor? And apparently there's rules around what I am supposed to name these variables??? I sent the code I'm working on to your computer, could you give me an example of a variable name that uses two words?"],["I too am having a bad day I was told you guys use something called variable names here rather than memorizing every storage address like we do on Asblamflabacor? And apparently there's rules around what I am supposed to name these variables??? I sent the code I'm working on to your computer, could you give me an example of a variable name that uses two words?"]]
+@onready var d0 = [["Hello! My name is Jeb and I am your new hire from planet Asblamflabakor! How was the intergalactic dentists conference? \n4. It was great! Got a whole new set of teeth. How is your project coming? \n5. It was terrible, lost all my teeth! How is your project coming?"] ,["Awesome! I am not having such a good day because I was told you guys use something called variable names here rather than memorizing every storage address like we do on Asblamflabakor? And apparently there's rules around what I am supposed to name these variables??? I sent the code I'm working on to your computer, could you give me an example of a variable name that uses two words?"],["I too am having a bad day I was told you guys use something called variable names here rather than memorizing every storage address like we do on Asblamflabakor? And apparently there's rules around what I am supposed to name these variables??? I sent the code I'm working on to your computer, could you give me an example of a variable name that uses at least two words?"]]
 
-@onready var d1 = "Thanks! I see that you have capitalized some letters. How often should I be capitalizing these letters?\n1. Anytime you want to emphasize a particular letter \n2. When you start a new word or abbreviation after the first \n3. Only when you want to emphasize a particular word in a variable name"
-@onready var d2 = "Thanks! I see that you are using underscores. How often should I put underscores in my variable name?\n1. Anytime you want to emphasize a particular letter \n2. When you start a new word or abbreviation after the first \n3. Only when you want to emphasize a particular word in a variable name"
-@onready var d3 = "Thanks! Not having any capitol letters or underscores to make things readable to humans makes me feel like im back on Asblamflabacor! "
+@onready var d1 = "Thanks! I see that you have capitalized some letters. How often should I be doing that?\n1. Anytime you want to emphasize something \n2. When you start a new word or abbreviation after the first \n3. Only when you want to emphasize a particular word in a variable name"
+@onready var d2 = "Thanks! I see that you are using underscores. How often should I use those?\n1. Anytime you want to emphasize something \n2. When you start a new word or abbreviation after the first \n3. Only when you want to emphasize a particular word in a variable name"
+@onready var d3 = "Thanks! Not having any capitol letters or underscores to make things readable to humans makes me feel like im back on Asblamflabakor!"
 
-@onready var d4 = "That sounds like fun! Going to take some getting used to. Another question for you: How specific should my names be? \n1. Longer than you have. Keep it consise but use full words unless it's a commonly known abbreviation. \n2. What you have is great! No changes needed, abbreviate everything. \n3. You should be as specific as possible. Anyone reading should know exactly what it is"
-@onready var d5 = "Ugh, sounds like a lot of work but I see the benefits. Another question for you: How specific should my names be? \n1. Longer than you have. Keep it consise but use full words unless it's a commonly known abbreviation. \n2. What you have is great! No changes needed, abbreviate everything. \n3. You should be as specific as possible. Anyone reading should know exactly what it is"
-@onready var d6 = "Awesome! Just like back on Asblamflabacor. Another question for you: How specific should my names be? \n1. Longer than you have. Keep it consise but use full words unless it's a commonly known abbreviation. \n2. What you have is great! No changes needed, abbreviate everything. \n3. You should be as specific as possible. Anyone reading should know exactly what it is"
+@onready var d4 = "Great! We don't have the letter C on Asblamflabakor and I really like it's shape. I think I'll emphasize those. Another question for you: How specific should my names be?\n1. Longer than you have. Keep it consise but use full words unless it's a commonly known abbreviation. \n2. What you have is great! No changes needed, abbreviate everything. \n3. You should be as specific as possible. Anyone reading should know exactly what it is"
+@onready var d5 = "Ugh, sounds like a lot of work but I see the benefits. Another question for you: How specific should my names be?\n1. Longer than you have. Keep it consise but use full words unless it's a commonly known abbreviation. \n2. What you have is great! No changes needed, abbreviate everything. \n3. You should be as specific as possible. Anyone reading should know exactly what it is"
+@onready var d6 = "Awesome! Just like back on Asblamflabakor. Another question for you: How specific should my names be?\n1. Longer than you have. Keep it consise but use full words unless it's a commonly known abbreviation. \n2. What you have is great! No changes needed, abbreviate everything. \n3. You should be as specific as possible. Anyone reading should know exactly what it is"
 @onready var d7 = d4
 @onready var d8 = d5
-@onready var d9 = "That makes sense! I love the letter C you have in this language. Another question for you: How specific should my names be? \n1. Longer than you have. Keep it consise but use full words unless it's a commonly known abbreviation. \n2. What you have is great! No changes needed, abbreviate everything. \n3. You should be as specific as possible. Anyone reading should know exactly what it is"
+@onready var d9 = "That makes sense! We don't have the letter C in Asblamflabakorian so I think I'll emphasize those. Another question for you: How specific should my names be? \n1. Longer than you have. Keep it consise but use full words unless it's a commonly known abbreviation. \n2. What you have is great! No changes needed, abbreviate everything. \n3. You should be as specific as possible. Anyone reading should know exactly what it is"
 @onready var d10 = "Another question for you: How specific should my names be? \n1. Longer than you have. Keep it consise but use full words unless it's a commonly known abbreviation. \n2. What you have is great! No changes needed, abbreviate everything. \n3. You should be as specific as possible. Anyone reading should know exactly what it is"
 @onready var d11 = d10
 @onready var d12 = d10
 
-@onready var d13 = "Thanks so much for your help! Take a look at my code. How did I do?"
-@onready var d14 = d13
-@onready var d15 = d13
-@onready var d16 = d13
-@onready var d17 = d13
-@onready var d18 = d13
-@onready var d19 = d13
-@onready var d20 = d13
-@onready var d21 = d13
-@onready var d22 = d13
-@onready var d23 = d13
-@onready var d24 = d13
-@onready var d25 = d13
-@onready var d26 = d13
-@onready var d27 = d13
-@onready var d28 = d13
-@onready var d29 = d13
-@onready var d30 = d13
-@onready var d31 = d13
-@onready var d32 = d13
-@onready var d33 = d13
-@onready var d34 = d13
-@onready var d35 = d13
-@onready var d36 = d13
-@onready var d37 = d13
-@onready var d38 = d13
-@onready var d39 = d13
+@onready var d13 = "Thanks for your help! Just to recap I should be using capital letters(✓), I should use them anytime I want to emphasize a letter(✗), and I should have clear and consice variable names(✓)? Take a look at my code and see how well you can read it!"
+@onready var d14 = "Thanks for your help! Just to recap I should be using capital letters(✓), I should use them anytime I want to emphasize a letter(✗), and I should abbreviate everything(✗)? Take a look at my code and see how well you can read it!"
+@onready var d15 = "Thanks for your help! Just to recap I should be using capital letters(✓), I should use them anytime I want to emphasize a letter(✗), and I should be as specific as possible(✗)? Take a look at my code and see how well you can read it!"
+@onready var d16 = "Thanks for your help! Just to recap I should be using capital letters(✓), I should use them when I start a new word(✓), and I should have clear and consice variable names(✓)? Take a look at my code and see how well you can read it!"
+@onready var d17 = "Thanks for your help! Just to recap I should be using capital letters(✓), I should use them when I start a new word(✓), and I should abbreviate everything(✗)? Take a look at my code and see how well you can read it!"
+@onready var d18 = "Thanks for your help! Just to recap I should be using capital letters(✓), I should use them when I start a new word(✓), and I should be as specific as possible(✗)? Take a look at my code and see how well you can read it!"
+@onready var d19 = "Thanks for your help! Just to recap I should be using capital letters(✓), I should use them to emphasize a particular word(✗), and I should have clear and consice variable names(✓)? Take a look at my code and see how well you can read it!"
+@onready var d20 = "Thanks for your help! Just to recap I should be using capital letters(✓), I should use them to emphasize a particular word(✗), and I should abbreviate everything(✗)? Take a look at my code and see how well you can read it!"
+@onready var d21 = "Thanks for your help! Just to recap I should be using capital letters(✓), I should use them to emphasize a particular word(✗), and I should be as specific as possible(✗)? Take a look at my code and see how well you can read it!"
+@onready var d22 = "Thanks for your help! Just to recap I should be using underscores(✓), I should use them anytime I want to emphasize a letter(✗), and I should have clear and consice variable names(✓)? Take a look at my code and see how well you can read it!"
+@onready var d23 = "Thanks for your help! Just to recap I should be using underscores(✓), I should use them anytime I want to emphasize a letter(✗), and I should abbreviate everything(✗)? Take a look at my code and see how well you can read it!"
+@onready var d24 = "Thanks for your help! Just to recap I should be using underscores(✓), I should use them anytime I want to emphasize a letter(✗), and I should be as specific as possible(✗)? Take a look at my code and see how well you can read it!"
+@onready var d25 = "Thanks for your help! Just to recap I should be using underscores(✓), I should use them when I start a new word(✓), and I should have clear and consice variable names(✓)? Take a look at my code and see how well you can read it!"
+@onready var d26 = "Thanks for your help! Just to recap I should be using underscores(✓), I should use them when I start a new word(✓), and I should abbreviate everything(✗)? Take a look at my code and see how well you can read it!"
+@onready var d27 = "Thanks for your help! Just to recap I should be using underscores(✓), I should use them when I start a new word(✓), and I should be as specific as possible(✗)? Take a look at my code and see how well you can read it!"
+@onready var d28 = "Thanks for your help! Just to recap I should be using underscores(✓), I should use them to emphasize a particular word(✗), and I should have clear and consice variable names(✓)? Take a look at my code and see how well you can read it!"
+@onready var d29 = "Thanks for your help! Just to recap I should be using underscores(✓), I should use them to emphasize a particular word(✗), and I should abbreviate everything(✗)? Take a look at my code and see how well you can read it!"
+@onready var d30 = "Thanks for your help! Just to recap I should be using underscores(✓), I should use them to emphasize a particular word(✗), and I should be as specific as possible(✗)? Take a look at my code and see how well you can read it!"
+@onready var d31 = "Thanks for your help! Just to recap I should be using no capital letters or underscores(✗), I should use them anytime I want to emphasize a letter(✗), and I should have clear and consice variable names(✓)? Take a look at my code and see how well you can read it!"
+@onready var d32 = "Thanks for your help! Just to recap I should be using no capital letters or underscores(✗), I should use them anytime I want to emphasize a letter(✗), and I should abbreviate everything(✗)? Take a look at my code and see how well you can read it!"
+@onready var d33 = "Thanks for your help! Just to recap I should be using no capital letters or underscores(✗), I should use them anytime I want to emphasize a letter(✗), and I should be as specific as possible(✗)? Take a look at my code and see how well you can read it!"
+@onready var d34 = "Thanks for your help! Just to recap I should be using no capital letters or underscores(✗), I should use them when I start a new word(✓), and I should have clear and consice variable names(✓)? Take a look at my code and see how well you can read it!"
+@onready var d35 = "Thanks for your help! Just to recap I should be using no capital letters or underscores(✗), I should use them when I start a new word(✓), and I should abbreviate everything(✗)? Take a look at my code and see how well you can read it!"
+@onready var d36 = "Thanks for your help! Just to recap I should be using no capital letters or underscores(✗), I should use them when I start a new word(✓), and I should be as specific as possible(✗)? Take a look at my code and see how well you can read it!"
+@onready var d37 = "Thanks for your help! Just to recap I should be using no capital letters or underscores(✗), I should use them to emphasize a particular word(✗), and I should have clear and consice variable names(✓)? Take a look at my code and see how well you can read it!"
+@onready var d38 = "Thanks for your help! Just to recap I should be using no capital letters or underscores(✗), I should use them to emphasize a particular word(✗), and I should abbreviate everything(✗)? Take a look at my code and see how well you can read it!"
+@onready var d39 = "Thanks for your help! Just to recap I should be using no capital letters or underscores(✗), I should use them to emphasize a particular word(✗), and I should be as specific as possible(✗)? Take a look at my code and see how well you can read it!"
 
 #Variables that represent the diagetic code represented on the computer. Subtrees are not compaitble here, each variable must be it's own string. 
 @onready var c0 = "def func HowManyAtendees? \n    0x7ffe5367e044 = FetchAtendeeData()\n     __________ = 0x7ffe5367e044.GetAtendees() \n    return(_______) \n\n\n\n\n\n\nPress enter to send example code back to Jeb"
@@ -77,27 +77,27 @@ extends CanvasLayer
 @onready var c11 = c10
 @onready var c12 = c10
 
-@onready var c13 = "def class ConventionVenue: \n     NuMtOtAlCaPaCiTy = 200 \n     NuMrOoMs = 10\n     aDaCoMpLiAnCe = True \n     lOcAtIoN = (44.2231,99.1111)"
-@onready var c14 = "def class ConventionVenue: \n     NtTlCCPt = 200 \n     nrMS = 10\n     aDaC = True \n     l = (44.2231,99.1111)"
-@onready var c15 = "def class ConventionVenue: \n     tHeMaXiMuMnUmBeRoFpEoPlEtHeVeNuEcAnAcCoMmOdAtEiNtErMsOfGuEsTsNoTiNcLuDiNgStAfFoRpReSeNtErS = 200 \n     tHeNuMbErOfRoOmStHaTwEcAnUsEiNtHeVeNuEfOrPrEsEnTaTiOnSnOtInClUdInGbAtHrOoMsAnDbAcKoFhOuSeStUfFjUsTcOnFrEnCeRoOmSaNdBaLlRoOmS = 10\n     wHeThErOrNoTtHeVeNuEhAsRaMpSeLeVaToRsAnDoThErAdAcOmPlIaNtFeAtUrEs = True \n     tHeExAcTcOoRdInAtEsOfThEvEnUe = (44.2231,99.1111)"
-@onready var c16 = "def class ConventionVenue: \n     numTotalCapacity = 200 \n     numRooms = 10\n     adaCompliance = True \n     location = (44.2231,99.1111)"
-@onready var c17 = "def class ConventionVenue: \n     nTtlCpt = 200 \n     nRms = 10\n     adaC = True \n     l = (44.2231,99.1111)"
-@onready var c18 = "def class ConventionVenue: \n     theMaximumNumberOfPeopleTheVenueCanAccommodateInTermsOfGuestsNotIncludingStaffOrPresenters = 200 \n     theNumberOfRoomsThatWeCanUseInTheVenueForPresentationsNotIncludingBathroomsAndBackOfHouseStuffJustConfrenceRoomsAndBallRooms = 10\n     whetherOrNotTheVenueHasRampsElevatorsAndOtherADACompliantFeatures = True \n     theExactCoordinatesOfTheVenue = (44.2231,99.1111)"
-@onready var c19 = "def class ConventionVenue: \n     numtotalCapacity = 200 \n     Numrooms = 10\n     adaCompliance = True \n     Location = (44.2231,99.1111)"
-@onready var c20 = "def class ConventionVenue: \n     Nttlcpt = 200 \n     nrMS = 10\n     Adac = True \n     l = (44.2231,99.1111)"
-@onready var c21 = "def class ConventionVenue: \n     ThemaximumnumberofpeoplethevenueCanaccommodateintermsofguestsnotincludingstafforpresenters = 200 \n     ThenumberofroomsthatweCanuseinthevenueforpresentationsnotincludingBathroomsAndbackofhousestuffjustConferenceroomsandballrooms = 10\n     Whetherornotthevenuehasrampselevatorsandotheradacompliantfeatures = True \n     Theexactcoordinatesofthevenue = (44.2231,99.1111)"
-@onready var c22 = "def class Convention_Venue: \n     n_u_m_t_o_t_al_c_ap_a_c_i_ty = 200 \n     n_u_m_r_o_o_ms = 10\n     a_d_a_c_o_m_p_l_i_a_n_ce = True \n     l_o_c_a_t_i_o_n = (44.2231,99.1111)"
-@onready var c23 = "def class Convention_Venue: \n     n_t_t_l_c_p_t = 200 \n     nr_ms = 10\n     a_da_c = True \n     l = (44.2231,99.1111)"
-@onready var c24 = "def class Convention_Venue: \n     t_h_e_m_ax_i_m_u_m_n_u_mb_er_o_f_p_e_o_pl_e_t_h_e_v_en_u_e_c_an_ac_c_o_m_mo_d_at_e_in_t_er_ms_o_f_gu_es_ts_n_ot_in_c_lu_d_in_g_st_af_f_or_p_re_s_en_t_er_s = 200 \n     t_he_n_um_b_er_o_f_ro_o_ms_t_ha_t_w_e_c_an_us_e_in_th_e_v_en_ue_f_or_p_re_s_en_t_at_io_ns_n_ot_in_c_lu_di_n_g_ba_th_ro_o_ms_a_nd_b_ac_k_of_h_ou_se_s_tu_ff_j_us_t_co_nf_re_nc_e_r_oo_ms_an_d_b_al_l_r_oo_m_s = 10\n     w_he_th_er_o_r_no_t_t_he_v_en_ue_h_as_r_am_ps_e_le_va_to_rs_a_nd_o_th_e_r_ad_a_c_om_pl_ia_n_t_f_ea_tu_re_s = True \n     t_h_e_ex_ac_t_c_oo_rd_in_at_es_o_f_th_e_v_en_u_e = (44.2231,99.1111)"
-@onready var c25 = "def class Convention_Venue: \n     num_total_capacity = 200 \n     num_rooms = 10\n     ada_compliance = True \n     location = (44.2231,99.1111)"
-@onready var c26 = "def class Convention_Venue: \n     n_ttl_cpt = 200 \n     n_rms = 10\n     ada_c = True \n     l = (44.2231,99.1111)"
-@onready var c27 = "def class Convention_Venue: \n     the_maximum_number_of_people_the_venue_can_accommodate_in_terms_of_guests_not_including_staff_or_presenters = 200 \n     the_number_of_rooms_that_we_can_use_in_the_venue_for_presentations_not_including_bathrooms_and_back_of_house_stuff_just_confrence_rooms_and_ball_rooms = 10\n     whether_or_not_the_venue_has_ramps_elevators_and_other_ada_compliant_features = True \n     the_exact_coordinates_of_the_venue = (44.2231,99.1111)"
-@onready var c28 = "def class Convention_Venue: \n     numtotal_c_apa_c_ity = 200 \n     numrooms_c_ = 10\n     ada_c_omplian_c_e = True \n     lo_c_ation = (44.2231,99.1111)"
-@onready var c29 = "def class Convention_Venue: \n     nttl_c_pt = 200 \n     nr_ms_c_ = 10\n     ada_c_ = True \n     l = (44.2231,99.1111)"
-@onready var c30 = "def class Convention_Venue: \n     themaximumnumberofpeoplethevenue_c_ana_c__c_ommodateintermsofguestsnotin_c_ludingstafforpresenters = 200 \n     thenumberofroomsthatwe_c_anuseinthevenueforpresentationsnotin_c_ludingbathroomsandba_c_kofhousestuffjust_c_onfren_c_eroomsandballrooms = 10\n     whetherornotthevenuehasrampselevatorsandotherada_c_ompliantfeatures = True \n     theexa_c_t_c_oordinatesofthevenue = (44.2231,99.1111)"
-@onready var c31 = "def class ConventionVenue: \n     numtotalcapacity = 200 \n     numrooms = 10\n     adacompliance = True \n     location = (44.2231,99.1111)"
-@onready var c32 = "def class ConventionVenue: \n     nttlcpt = 200 \n     nrms = 10\n     adac = True \n     l = (44.2231,99.1111)"
-@onready var c33 = "def class ConventionVenue: \n     themaximumnumberofpeoplethevenuecanaccommodateintermsofguestsnotincludingstafforpresenters = 200 \n     thenumberofroomsthatwecanuseinthevenueforpresentationsnotincludingbathroomsandbackofhousestuffjustconfrenceroomsandballrooms = 10\n     whetherornotthevenuehasrampselevatorsandotheradacompliantfeatures = True \n     theexactcoordinatesofthevenue = (44.2231,99.1111)"
+@onready var c13 = "def class ConventionVenue:\n     NuMtOtAlCaPaCiTy = 200 \n     NuMrOoMs = 10\n     aDaCoMpLiAnCe = True \n     lOcAtIoN = (44.2231,99.1111)"
+@onready var c14 = "def class ConventionVenue:\n     NtTlCCPt = 200 \n     nrMS = 10\n     aDaC = True \n     l = (44.2231,99.1111)"
+@onready var c15 = "def class ConventionVenue:\n     tHeMaXiMuMnUmBeRoFpEoPlEtHeVeNuEcAnAcCoMmOdAtEiNtErMsOfGuEsTsNoTiNcLuDiNgStAfFoRpReSeNtErS = 200 \n     tHeNuMbErOfRoOmStHaTwEcAnUsEiNtHeVeNuEfOrPrEsEnTaTiOnSnOtInClUdInGbAtHrOoMsAnDbAcKoFhOuSeStUfFjUsTcOnFrEnCeRoOmSaNdBaLlRoOmS = 10\n     wHeThErOrNoTtHeVeNuEhAsRaMpSeLeVaToRsAnDoThErAdAcOmPlIaNtFeAtUrEs = True \n     tHeExAcTcOoRdInAtEsOfThEvEnUe = (44.2231,99.1111)"
+@onready var c16 = "def class ConventionVenue:\n     numTotalCapacity = 200 \n     numRooms = 10\n     adaCompliance = True \n     location = (44.2231,99.1111)"
+@onready var c17 = "def class ConventionVenue:\n     nTtlCpt = 200 \n     nRms = 10\n     adaC = True \n     l = (44.2231,99.1111)"
+@onready var c18 = "def class ConventionVenue:\n     theMaximumNumberOfPeopleTheVenueCanAccommodateInTermsOfGuestsNotIncludingStaffOrPresenters = 200 \n     theNumberOfRoomsThatWeCanUseInTheVenueForPresentationsNotIncludingBathroomsAndBackOfHouseStuffJustConfrenceRoomsAndBallRooms = 10\n     whetherOrNotTheVenueHasRampsElevatorsAndOtherADACompliantFeatures = True \n     theExactCoordinatesOfTheVenue = (44.2231,99.1111)"
+@onready var c19 = "def class ConventionVenue:\n     numtotalCapacity = 200 \n     Numrooms = 10\n     adaCompliance = True \n     Location = (44.2231,99.1111)"
+@onready var c20 = "def class ConventionVenue:\n     Nttlcpt = 200 \n     nrMS = 10\n     Adac = True \n     l = (44.2231,99.1111)"
+@onready var c21 = "def class ConventionVenue:\n     ThemaximumnumberofpeoplethevenueCanaccommodateintermsofguestsnotincludingstafforpresenters = 200 \n     ThenumberofroomsthatweCanuseinthevenueforpresentationsnotincludingBathroomsAndbackofhousestuffjustConferenceroomsandballrooms = 10\n     Whetherornotthevenuehasrampselevatorsandotheradacompliantfeatures = True \n     Theexactcoordinatesofthevenue = (44.2231,99.1111)"
+@onready var c22 = "def class Convention_Venue:\n     numtotal_c_apa_c_ity = 200 \n     n_u_m_r_o_o_ms = 10\n     ada_c_omplian_c_e = True \n     lo_c_ation = (44.2231,99.1111)"
+@onready var c23 = "def class Convention_Venue:\n     nttl_c_pt = 200 \n     n_r_m_s = 10\n     a_da_c_ = True \n     l = (44.2231,99.1111)"
+@onready var c24 = "def class Convention_Venue:\n     themaximumnumberofpeoplethevenue_c_ana_c_c_om_modateintermsofguestsnotin_c_ludingstafforpresenters = 200 \n     thenumberofroomsthatwe_c_anuseinthevenueforpresentationsnotin_c_ludingbathroomsandba_c_kofhousestuffjust_c_onfren_c_eroomsandballrooms = 10\n     whetherornotthevenuehasrampselevatorsandotherada_c_ompliantfeatures = True \n     theexact_c_oordinatesofthevenue = (44.2231,99.1111)"
+@onready var c25 = "def class Convention_Venue:\n     num_total_capacity = 200 \n     num_rooms = 10\n     ada_compliance = True \n     location = (44.2231,99.1111)"
+@onready var c26 = "def class Convention_Venue:\n     n_ttl_cpt = 200 \n     n_rms = 10\n     ada_c = True \n     l = (44.2231,99.1111)"
+@onready var c27 = "def class Convention_Venue:\n     the_maximum_number_of_people_the_venue_can_accommodate_in_terms_of_guests_not_including_staff_or_presenters = 200 \n     the_number_of_rooms_that_we_can_use_in_the_venue_for_presentations_not_including_bathrooms_and_back_of_house_stuff_just_confrence_rooms_and_ball_rooms = 10\n     whether_or_not_the_venue_has_ramps_elevators_and_other_ada_compliant_features = True \n     the_exact_coordinates_of_the_venue = (44.2231,99.1111)"
+@onready var c28 = "def class Convention_Venue:\n     numtotal_c_apa_c_ity = 200 \n     numrooms_c_ = 10\n     ada_c_omplian_c_e = True \n     lo_c_ation = (44.2231,99.1111)"
+@onready var c29 = "def class Convention_Venue:\n     nttl_c_pt = 200 \n     nr_ms_c_ = 10\n     ada_c_ = True \n     l = (44.2231,99.1111)"
+@onready var c30 = "def class Convention_Venue:\n     themaximumnumberofpeoplethevenue_c_ana_c__c_ommodateintermsofguestsnotin_c_ludingstafforpresenters = 200 \n     thenumberofroomsthatwe_c_anuseinthevenueforpresentationsnotin_c_ludingbathroomsandba_c_kofhousestuffjust_c_onfren_c_eroomsandballrooms = 10\n     whetherornotthevenuehasrampselevatorsandotherada_c_ompliantfeatures = True \n     theexa_c_t_c_oordinatesofthevenue = (44.2231,99.1111)"
+@onready var c31 = "def class ConventionVenue:\n     numtotalcapacity = 200 \n     numrooms = 10\n     adacompliance = True \n     location = (44.2231,99.1111)"
+@onready var c32 = "def class ConventionVenue:\n     nttlcpt = 200 \n     nrms = 10\n     adac = True \n     l = (44.2231,99.1111)"
+@onready var c33 = "def class ConventionVenue:\n     themaximumnumberofpeoplethevenuecanaccommodateintermsofguestsnotincludingstafforpresenters = 200 \n     thenumberofroomsthatwecanuseinthevenueforpresentationsnotincludingbathroomsandbackofhousestuffjustconfrenceroomsandballrooms = 10\n     whetherornotthevenuehasrampselevatorsandotheradacompliantfeatures = True \n     theexactcoordinatesofthevenue = (44.2231,99.1111)"
 @onready var c34 = c31
 @onready var c35 = c32
 @onready var c36 = c33
